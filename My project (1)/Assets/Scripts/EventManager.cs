@@ -5,7 +5,6 @@ using System;
 
 public class EventManager : MonoBehaviour
 {
-      public static event Action ExampleEvent;
       private void Update()
         {
             
