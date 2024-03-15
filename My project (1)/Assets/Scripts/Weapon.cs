@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -28,11 +29,15 @@ public class Weapon : MonoBehaviour
     {
         gameObject.GetComponent<BoxCollider2D>().enabled=false;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
+        if(collision.tag == "Enemy")
         {
-             enemyComponent.TakeDamage(1);
+            var healthComponent = collision.GetComponent<Health>();
+            if(healthComponent != null)
+            {
+                healthComponent.TakeDamage(1);
+            }
         }
     }
 }
