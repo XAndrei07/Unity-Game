@@ -33,6 +33,7 @@ public class Weapon : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
+            
             var healthComponent = collision.GetComponent<Health>();
             if(healthComponent != null)
             {
