@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
             var healthComponent = collision.GetComponent<Health>();
             if(healthComponent != null)
             {
-                healthComponent.TakeDamage(1);
+                healthComponent.TakeDamage(2);
             }
         }
     }
